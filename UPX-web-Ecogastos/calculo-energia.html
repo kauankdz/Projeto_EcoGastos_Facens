@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Energia</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="arquivocss/energia.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+
+    <div class="container form-container">
+        <h2 class="text-center">⚡ Calculadora de Consumo de Energia</h2>
+        <p class="text-center">Insira os dados abaixo para verificar seu consumo médio de energia elétrica.</p>
+
+        <form id="energyForm">
+            <div class="mb-3">
+                <label for="n_pessoas" class="form-label">👨‍👩‍👧‍👦 Número de pessoas na casa:</label>
+                <input type="number" class="form-control" id="n_pessoas" name="n_pessoas" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="consumo_mensal" class="form-label">💡 Consumo Mensal (kWh):</label>
+                <input type="number" class="form-control" id="consumo_mensal" name="consumo_mensal" required>
+            </div>
+
+            <button type="button" onclick="calcularEnergia()" class="btn btn-success w-100 mt-3"> Calcular</button>
+        </form>
+    </div>
+
+    <div class="container text-center mt-4">
+        <div class="report-section">
+            <h3>📉 Resultado</h3>
+            <h2><span id="result" class="result "></span></h2>
+        </div>
+    </div>
+
+    <!-- Tabela de Critérios -->
+    <div class="container mt-4">
+        <h4 class="text-center" id="textocriterio"> Critério de Consumo (kWh/Pessoa/Dia)</h4>
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Classificação</th>
+                    <th>kWh/Pessoa/Dia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>✅ Ótimo</td><td>até 3</td></tr>
+                <tr><td>🟢 Adequado</td><td>3 - 5</td></tr>
+                <tr><td>🟡 Médio</td><td>6 - 8</td></tr>
+                <tr><td>🟠 Alto</td><td>9 - 12</td></tr>
+                <tr><td>🔴 Muito alto</td><td>acima de 12</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Botão de Voltar -->
+    <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-primary"> Voltar</a>
+    </div>
+      <!-- Rodapé -->
+  <footer class=" text-white text-center py-4">
+    <div class="container">
+        <p>&copy; 2025 EcoGastos. Todos os direitos reservados.</p>
+        <p><a href="#" class="text-white">Política de Privacidade</a> | <a href="#" class="text-white">Termos de Uso</a></p>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="arquivosjs/calculoenergia.js"></script>
+    
+</body>
+</html>
