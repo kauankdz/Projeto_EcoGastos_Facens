@@ -26,3 +26,14 @@
 
         document.getElementById('result').innerText = `Consumo médio: ${consumoDiarioPessoa.toFixed(2)} kWh/dia | ${Descricao}`;
     }
+   
+    function salvarResultado() {
+        const resultado = document.getElementById('result').textContent;
+        if (resultado.trim() === "") {
+            alert("Nenhum resultado para salvar!");
+        } else {
+            alert("Resultado salvo com sucesso: " + resultado);
+            // Aqui futuramente você pode salvar no localStorage ou em um banco de dados!
+        }
+    }
+
