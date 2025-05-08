@@ -1,37 +1,27 @@
+  function calculateSum() {
+      const pessoas = parseFloat(document.getElementById('n_pessoas').value);
+      const valorTotal = parseFloat(document.getElementById('valor_total').value);
+      const resultEl = document.getElementById('result');
 
-    function calculateSum() {
-        const Pessoas = parseFloat(document.getElementById('n_pessoas').value) || 0;
-        const consumo_diario = parseFloat(document.getElementById('consumo_diario').value) || 0;
-        const LitrosPessoaDia = Math.ceil(consumo_diario / Pessoas);
-        let Descricao;
+      if (pessoas <= 0 || valorTotal <= 0) {
+        resultEl.innerText = "⚠️ Preencha todos os campos com valores positivos.";
+        return;
+      }
 
-        if (Pessoas <= 0 || consumo_diario <= 0) {
-            document.getElementById('result').innerText = "⚠️ Insira valores positivos.";
-            return;
-        }
+      const valorPorPessoa = valorTotal / pessoas;
+      let classificacao = "";
 
-        if (LitrosPessoaDia > 185) {
-            Descricao = '🔴 Muito alto';
-        } else if (LitrosPessoaDia >= 156) {
-            Descricao = '🟠 Alto';
-        } else if (LitrosPessoaDia >= 131) {
-            Descricao = '🟡 Médio';
-        } else if (LitrosPessoaDia >= 111) {
-            Descricao = '🟢 Adequado';
-        } else {
-            Descricao = '✅ Ótimo';
-        }
+      if (valorPorPessoa > 80) {
+        classificacao = "🔴 Muito alto";
+      } else if (valorPorPessoa > 60) {
+        classificacao = "🟠 Alto";
+      } else if (valorPorPessoa > 40) {
+        classificacao = "🟡 Médio";
+      } else if (valorPorPessoa > 20) {
+        classificacao = "🟢 Adequado";
+      } else {
+        classificacao = "✅ Ótimo";
+      }
 
-        document.getElementById('result').innerText = `Consumo médio: ${LitrosPessoaDia} litros/dia | ${Descricao}`;
+      resultEl.innerHTML = `💰 Valor por pessoa: R$ ${valorPorPessoa.toFixed(2)}<br>📊 Classificação: <strong>${classificacao}</strong>`;
     }
-   
-    function salvarResultado() {
-        const resultado = document.getElementById('result').textContent;
-        if (resultado.trim() === "") {
-            alert("Nenhum resultado para salvar!");
-        } else {
-            alert("Resultado salvo com sucesso: " + resultado);
-            // Aqui futuramente você pode salvar no localStorage ou em um banco de dados!
-        }
-    }
-
