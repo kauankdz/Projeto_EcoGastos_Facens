@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sustentabilidade para o Futuro</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Arquivo de Estilo Personalizado -->
+    <link rel="stylesheet" href="arquivocss/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho com imagem de fundo -->
+    <header class="bg-dark text-white text-center py-5" style="background-image: url('nature-background.jpg'); background-size: cover; background-position: center; height: 100vh;">
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <img src="imagem/logoEcogastos.png" alt="EcoGastos" class="logo">
+                    </div>
+                </a>
+                <!-- Botão responsivo -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Itens do menu -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#links">Cálculo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prevencao.html">Prevenção</a></li>
+                        <li class="nav-item"><a class="nav-link" href="histórico.html">Histórico</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="grafico.html">Gráficos</a></li>
+                    </ul>
+                    <!-- Botão de login -->
+                    <button class="btn btn-outline-light ms-3" onclick="redirectToLogin()">Login</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Texto com efeito de digitação -->
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="display-4">
+                <span id="typing-text"></span>
+                <span class="cursor">|</span>
+            </h1>
+            <p class="lead">Junte-se a nós na luta pela preservação do meio ambiente e faça parte da mudança.</p>
+            <a href="#3RS" class="btn btn-success btn-lg">Saiba mais</a>
+        </div>
+    </header>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Sobre Nós</h2>
+            <p class="lead">
+                O EcoGastos nasceu com a missão de conscientizar as pessoas sobre o impacto do consumo no meio ambiente e incentivar práticas mais sustentáveis. Nosso objetivo é fornecer informações claras e acessíveis sobre o uso de recursos naturais, ajudando você a reduzir desperdícios e economizar de forma inteligente. 🌱♻️<br><br>
+                Acreditamos que pequenas atitudes podem gerar grandes mudanças. Com nossas ferramentas de cálculo, você poderá identificar hábitos que podem ser melhorados, aprender maneiras de reduzir sua pegada ecológica e adotar um estilo de vida mais consciente. 💧⚡<br><br>
+                Seja na economia de água, energia ou na adoção dos princípios dos 3R's (Reduzir, Reutilizar e Reciclar), o EcoGastos está aqui para te apoiar nessa jornada. Juntos, podemos construir um futuro mais verde, equilibrado e sustentável para as próximas gerações. 🌎✨
+            </p>
+        </div>
+    </section>
+
+                <!-- Ícone 1 - Transporte 
+                <div class="col-md-3">
+                    <a href="formulario.html" class="icon-link">
+                        <div class="icon-box">
+                            <i class="bi bi-car-front-fill"></i>
+                            <h5>Transporte</h5>
+                            <p>Saiba sobre seus gastos com transporte e emissão de gases.</p>
+                        </div>
+                    </a>
+                </div>-->
+
+                    <!-- Seção de Links para Calculadoras -->
+                    <section id="links" class="py-5">
+                        <div class="container text-center">
+                            <h2 class="mb-5">Nossas Calculadoras</h2>
+                            <div class="row g-4 justify-content-center">
+                                <!-- Card Água -->
+                                <div class="col-md-3 d-flex align-items-stretch">
+                                    <a href="calculo-agua.html" class="icon-link">
+                                        <div class="icon-box h-100">
+                                            <i class="bi bi-droplet-fill"></i>
+                                            <h5>Consumo de Água</h5>
+                                            <p>Calcule o quanto de água você gasta e como reduzir o desperdício.</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Card Energia -->
+                                <div class="col-md-3 d-flex align-items-stretch">
+                                    <a href="calculo-energia.html" class="icon-link">
+                                        <div class="icon-box h-100">
+                                            <i class="bi bi-lightning-fill"></i>
+                                            <h5>Energia</h5>
+                                            <p>Descubra o impacto do seu consumo de energia elétrica.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                <!-- Ícone 4 - 3R's
+                <div id="3RS" class="col-md-3">
+                    <a href="formulario.html" class="icon-link">
+                        <div class="icon-box">
+                            <i class="bi bi-recycle"></i>
+                            <h5>3 R's</h5>
+                            <p>Reduzir, Reutilizar e Reciclar para um planeta sustentável.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2025 EcoGastos. Todos os direitos reservados.</p>
+            <p><a href="#" class="text-white">Política de Privacidade</a> | <a href="#" class="text-white">Termos de Uso</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para redirecionar ao Login -->
+    <script>
+        function redirectToLogin() {
+            window.location.href = 'login.html'; // Redireciona para a página de login
+        }
+    </script>
+
+    <!-- Script para efeito de digitação -->
+    <script>
+        const text = "Construindo um futuro sustentável";
+        let index = 0;
+        const typingSpeed = 100; // Velocidade da digitação (ms)
+
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, typingSpeed);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeEffect, 500);
+        });
+    </script>
+
+</body>
+</html>
