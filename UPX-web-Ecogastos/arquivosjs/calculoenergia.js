@@ -1,10 +1,9 @@
 function calcularEnergia() {
     const pessoas = parseFloat(document.getElementById('n_pessoas').value);
     const valorConta = parseFloat(document.getElementById('valor_energia').value);
-    const resultEl = document.getElementById('result');
 
-    if (pessoas <= 0 || valorConta <= 0) {
-        resultEl.innerText = "⚠️ Insira valores positivos.";
+    if (pessoas <= 0 || valorConta <= 0 || isNaN(pessoas) || isNaN(valorConta)) {
+        alert("⚠️ Preencha os campos corretamente.");
         return;
     }
 
@@ -23,5 +22,46 @@ function calcularEnergia() {
         classificacao = "✅ Econômico";
     }
 
-    resultEl.innerHTML = `💰 Valor por pessoa: R$ ${valorPorPessoa.toFixed(2)}<br>📊 Classificação: <strong>${classificacao}</strong>`;
+    const resultadoElemento = document.getElementById("result");
+    resultadoElemento.textContent = `R$ ${valorPorPessoa.toFixed(2)} por pessoa - ${classificacao}`;
+}
+
+function salvarResultado() {
+    const pessoas = parseFloat(document.getElementById('n_pessoas').value);
+    const valorConta = parseFloat(document.getElementById('valor_energia').value);
+
+    if (pessoas <= 0 || valorConta <= 0 || isNaN(pessoas) || isNaN(valorConta)) {
+        alert("⚠️ Preencha os campos corretamente antes de salvar.");
+        return;
+    }
+
+    const valorPorPessoa = valorConta / pessoas;
+    let classificacao = "";
+
+    if (valorPorPessoa > 80) {
+        classificacao = "🔴 Muito alto";
+    } else if (valorPorPessoa > 60) {
+        classificacao = "🟠 Alto";
+    } else if (valorPorPessoa > 40) {
+        classificacao = "🟡 Médio";
+    } else if (valorPorPessoa > 25) {
+        classificacao = "🟢 Adequado";
+    } else {
+        classificacao = "✅ Econômico";
+    }
+
+    const novoRegistro = {
+        data: new Date().toLocaleDateString("pt-BR"),
+
+        calculadora: "Energia",
+        pessoas: pessoas,
+        valor: `R$ ${valorPorPessoa.toFixed(2)}`,
+        descricao: classificacao
+    };
+
+    const historico = JSON.parse(localStorage.getItem("historico")) || [];
+    historico.push(novoRegistro);
+    localStorage.setItem("historico", JSON.stringify(historico));
+
+    alert("✅ Resultado salvo no histórico!");
 }
