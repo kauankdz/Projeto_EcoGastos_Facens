@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Cálculos</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo Personalizado -->
+    <link rel="stylesheet" href="arquivocss/historico.css">
+</head>
+<body class="bg-dark text-white">
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">📃 Histórico de Resultados</h1>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button class="btn btn-outline-light" onclick="atualizarPagina()">🔄 Atualizar</button>
+            <a href="index.html" class="btn btn-success">Voltar ao Início</a>
+        </div>
+
+        <div class="table-responsive historico-container">
+            <table class="table table-dark table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Data</th>
+                        <th>Calculadora</th>
+                        <th>Qtd. Pessoas</th>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-historico">
+                    <!-- Dados serão inseridos via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-danger" onclick="resetarHistorico()">🗑️ Resetar Histórico</button>
+    </div>
+    
+
+    <script>
+  
+    function resetarHistorico() {
+        if (confirm("Tem certeza que deseja apagar todo o histórico? Esta ação não pode ser desfeita.")) {
+            localStorage.removeItem('historico');
+            location.reload(); // Recarrega a página para atualizar a tabela
+        }
+    }
+
+    </script>
+
+<script src="arquivosjs/script_historico.js"></script>
+</body>
+</html>

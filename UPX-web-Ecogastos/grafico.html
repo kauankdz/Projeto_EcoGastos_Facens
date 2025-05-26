@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos - Consumo de Recursos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="arquivocss/graficos.css">
+</head>
+<body class="bg-dark text-white">
+    <div class="container py-4">
+        <a href="index.html" class="btn btn-success mb-4">Voltar</a>
+        <h1 class="text-center mb-5">Gráficos sobre Consumo de Energia e Água por Região</h1>
+
+        <p>A evolução do consumo de energia e água no Brasil está diretamente ligada a fatores como urbanização, infraestrutura e atividades econômicas. Os gráficos abaixo apresentam a distribuição e crescimento do consumo de energia elétrica e água por região, entre 2014 e 2023, proporcionando uma visão das diferenças e impactos climáticos e socioeconômicos em cada área do país.</p>
+
+        <div class="grafico-container">
+            <h5>Consumo de Energia Elétrica por Região (2014 - 2023)</h5>
+            <canvas id="graficoEnergiaCrescimento"></canvas>
+            <p>A Região Sudeste é a maior consumidora, seguida pela Região Sul, com forte presença do setor agroindustrial. O Norte, apesar de seu crescimento recente, ainda possui consumo relativamente baixo devido à urbanização e acesso limitado a energia em áreas isoladas.</p>
+        </div>
+
+        <div class="grafico-container">
+            <h5>Consumo Anual de Energia por Região (kWh/ano)</h5>
+            <canvas id="graficoEnergiaAnual"></canvas>
+            <p>O consumo de energia por região reflete o nível de industrialização e a urbanização. Regiões como Sudeste e Sul apresentam os maiores consumos, enquanto o Norte e o Nordeste, com menos infraestrutura e maior foco em energias renováveis, têm consumo mais modesto.</p>
+        </div>
+
+        <div class="grafico-container">
+            <h5>Consumo de Água por Região</h5>
+            <canvas id="graficoAgua"></canvas>
+            <p>O consumo de água no Brasil também varia, com o Sudeste apresentando os maiores índices devido à urbanização e acesso a sistemas de abastecimento. O Nordeste, com menos recursos hídricos e maior seca, possui o menor consumo per capita.</p>
+        </div>
+
+        <h2 class="mt-5">Fontes dos Dados</h2>
+        <ul>
+            <li><a href="https://canalsolar.com.br/brasil-registra-maior-consumo-medio-de-energia-eletrica-dos-ultimos-anos/?utm_source=chatgpt.com" target="_blank">Canal Solar - Consumo Médio de Energia Elétrica no Brasil</a></li>
+            <li><a href="https://www.ccee.org.br/" target="_blank">CCEE - Câmara de Comercialização de Energia Elétrica</a></li>
+            <li><a href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/Balanco-Energetico-Nacional-BEN" target="_blank">EPE - Empresa de Pesquisa Energética</a></li>
+            <li><a href="https://app.ons.org.br/paginas/energia-armazenada-e-consumida" target="_blank">ONS - Operador Nacional do Sistema Elétrico</a></li>
+            <li><a href="https://censo2022.ibge.gov.br/" target="_blank">IBGE - População por Região do Brasil</a></li>
+            <li><a href="https://www.gov.br/ana/pt-br" target="_blank">ANA - Agência Nacional de Águas e Saneamento Básico</a></li>
+        </ul>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="arquivosjs/graficos.js"></script>
+</body>
+</html>

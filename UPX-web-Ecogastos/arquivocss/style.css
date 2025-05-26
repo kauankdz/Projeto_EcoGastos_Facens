@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+
+.logo-container {
+    position: absolute;
+    top: -27px;
+    left: 55px;/* Distância da esquerda */
+    z-index: 1000; /* Mantém a logo acima dos elementos */
+}
+
+.logo-container img {
+    width: 130px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
+
+/* Estilo do Header */
+.header {
+    background: url('nature-background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Mantém a navbar acima */
+    background: rgba(0, 0, 0, 0.8); /* Um leve fundo para contraste */
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Caixa de conteúdo no Header */
+.content-box {
+    background: rgba(28, 27, 27, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: white;
+    max-width: 600px;
+}
+
+/* Estilizando os Títulos */
+h1, h2 {
+    color: #4CAF50;
+}
+
+/* Botões */
+.btn-success {
+    background: #4CAF50;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+    background: transparent !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    color: white !important;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #4CAF50 !important;
+}
+
+/* Estilizando os Cards */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.card-title {
+    color: #4CAF50;
+}
+#sobre {
+    margin-top: 50px; /* Ajuste esse valor conforme necessário */
+}
+
+/* Estilizando os Ícones */
+.icon-box {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.icon-box i {
+    font-size: 3rem; /* Ícone grande */
+    color: #4CAF50;
+    transition: color 0.3s ease-in-out;
+}
+
+.icon-box h5 {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.icon-box p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.icon-box:hover {
+    background: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+
+.icon-box:hover i {
+    color: white;
+}
+
+/* Remove o sublinhado dos links */
+.icon-link {
+    text-decoration: none;
+    color: inherit;
+}
+.py-5{
+    padding-top: 2rem !important;
+    padding-bottom: 6rem !important;
+}
+.cursor {
+    display: inline-block;
+    width: 10px;
+    animation: blink 0.6s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}

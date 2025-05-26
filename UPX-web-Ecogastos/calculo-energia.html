@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Energia</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="arquivocss/energia.css">
+  
+</head>
+<body class="bg-dark">
+
+    <div class="container form-container">
+        <h2 class="text-center">⚡ Calculadora de Consumo de Energia</h2>
+        <p class="text-center">Insira os dados abaixo para verificar seu consumo médio de energia elétrica.</p>
+
+        <form id="energyForm">
+            <div class="mb-3">
+                <label for="n_pessoas" class="form-label">👨‍👩‍👧‍👦 Número de pessoas na casa:</label>
+                <input type="number" class="form-control" id="n_pessoas" name="n_pessoas" required>
+            </div>
+
+<div class="mb-3">
+    <label for="valor_energia" class="form-label">💵 Valor total da conta de luz (R$):</label>
+    <input type="number" step="0.01" class="form-control" id="valor_energia" name="valor_energia" required>
+</div>
+
+
+            <button type="button" onclick="calcularEnergia()" class="btn btn-success w-100 mt-3"> Calcular</button>
+        </form>
+    </div>
+
+    <div class="container text-center mt-4">
+        <div class="report-section">
+            <h3>📉 Resultado</h3>
+            <h2><span id="result" class="result "></span></h2>
+        </div>
+    </div>
+
+   <!-- Tabela de Critérios -->
+<div class="container mt-4">
+  <h4 class="text-center" id="textocriterio">Critério de Consumo (R$/Pessoa)</h4>
+  <table class="table table-bordered text-center table-light">
+    <thead>
+      <tr>
+        <th>Classificação</th>
+        <th>Valor da Conta por Pessoa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>✅ Econômico</td><td>até R$ 25,00</td></tr>
+      <tr><td>🟢 Adequado</td><td>R$ 25,01 - R$ 40,00</td></tr>
+      <tr><td>🟡 Médio</td><td>R$ 40,01 - R$ 60,00</td></tr>
+      <tr><td>🟠 Alto</td><td>R$ 60,01 - R$ 80,00</td></tr>
+      <tr><td>🔴 Muito alto</td><td>acima de R$ 80,00</td></tr>
+    </tbody>
+  </table>
+</div>
+
+    <!-- Botão de Voltar -->
+    <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-primary"> Voltar</a>
+    </div>
+    <!-- Botões de Ações -->
+<div class="container text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
+    <button class="btn btn-success" onclick="salvarResultado()">Salvar Resultado</button>
+    <a class="btn btn-outline-light" href="histórico.html">Históricos</a>
+
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="arquivosjs/calculoenergia.js"></script>
+    
+</body>
+</html>
